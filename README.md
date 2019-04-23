@@ -66,6 +66,16 @@ At Uber we are mostly using the [opentracing_instrumentation](https://github.com
 Note: do not initialize the tracer during import, it may cause a deadlock (see issues #31, #60).
 Instead define a function that returns a tracer (see example below) and call that function explicitly
 after all the imports are done.
+### Enviroment Variables
+
+
+The tracer can be initialized with values coming from environment variables. None of the env vars are required
+and all of them can be overriden via direct setting of the property on the configuration object.
+
+Property| Description
+--- | ---
+JAEGER_AGENT_HOST | The hostname for communicating with agent via UDP
+JAEGER_AGENT_PORT | The port for communicating with agent via UDP
 
 ### Production
 
